@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 
 import Footer from '../components/footer/footer'
 import Header from '../components/Header';
-// import './all.sass';
 import './index.css'
 
 const TemplateWrapper = ({ children }) => (
