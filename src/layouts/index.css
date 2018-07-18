@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'SyneWebFont';
+    src: url('Syne-Regular.woff2'); /* IE9 Compat Modes */
+    src: url('Syne-Regular.woff2?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Syne-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Syne-Regular.woff2') format('woff'), /* Pretty Modern Browsers */
+         url('Syne-Regular.woff2')  format('truetype'), /* Safari, Android, iOS */
+  }
+  
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'SyneWebFont', Fallback, sans-serif;
+    font-size: 1.2em;
+  }
