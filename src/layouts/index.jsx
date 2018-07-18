@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Styled from 'styled-components';
 
-
+import Footer from '../components/footer/footer'
 import Header from '../components/Header';
 // import './all.sass';
 import './index.css'
@@ -13,6 +12,7 @@ const TemplateWrapper = ({ children }) => (
     <Helmet title="immajung" />
     <Header />
     <div>{children()}</div>
+    <Footer />
   </div>
 );
 
