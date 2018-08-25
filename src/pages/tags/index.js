@@ -15,6 +15,7 @@ const TagsPage = ({
           style={{ marginBottom: '6rem' }}
         >
           <h1 className="title is-size-2 is-bold-light">Tags</h1>
+          <h1>TEST</h1>
           <ul className="taglist">
             {group.map(tag => (
               <li key={tag.fieldValue}>
