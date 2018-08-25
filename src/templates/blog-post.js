@@ -16,7 +16,6 @@ export const BlogPostTemplate = ({
 
   return (
     <section className="section">
-      {helmet || ''}
       <h1>BLOGPOST</h1>
     </section>
   )
