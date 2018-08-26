@@ -10,9 +10,9 @@ const TemplateWrapper = ({ children }) => (
   </div>
 );
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func
-};
+// TemplateWrapper.propTypes = {
+//   children: PropTypes.func
+// };
 
 export default TemplateWrapper;
 
