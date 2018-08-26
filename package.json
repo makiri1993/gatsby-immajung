@@ -15,6 +15,7 @@
     "gatsby-plugin-react-helmet": "^2.0.5",
     "gatsby-plugin-sass": "^1.0.17",
     "gatsby-plugin-sharp": "^1.6.34",
+    "gatsby-plugin-typescript": "^1.4.20",
     "gatsby-remark-images": "^1.5.50",
     "gatsby-source-filesystem": "^1.5.23",
     "gatsby-transformer-remark": "^1.7.33",
@@ -27,6 +28,7 @@
     "react": "^16.2.0",
     "react-emotion": "^9.2.6",
     "react-helmet": "^5.2.0",
+    "typescript": "^3.0.1",
     "uuid": "^3.2.1"
   },
   "keywords": [
