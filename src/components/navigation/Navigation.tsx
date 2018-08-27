@@ -8,10 +8,6 @@ interface NavigationProps {
 interface NavigationState {
 }
 
-const logoPath: string = require('../Logo/immajung_logo.svg')
-
-
-
 export default class Navigation extends React.Component<NavigationProps, NavigationState> {
 	constructor(props: NavigationProps) {
 		super(props)
