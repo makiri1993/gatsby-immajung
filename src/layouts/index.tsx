@@ -3,7 +3,7 @@ import Logo from '../components/logo/Logo';
 import '../styles/reset.css';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
-import Title from '../components/title/title';
+import Title from '../components/title/Title';
 import styled from 'react-emotion';
 
 
