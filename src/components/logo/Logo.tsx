@@ -10,7 +10,7 @@ interface LogoState {
 	logoPathChange: string
 }
 
-const logoPath: string = require('../Logo/immajung_logo.svg')
+const logoPath: string = require('../logo/immajung_logo.svg')
 
 
 
