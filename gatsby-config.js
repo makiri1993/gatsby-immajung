@@ -39,17 +39,7 @@ module.exports = {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
     },
-    {
-      resolve: "gatsby-plugin-typescript",
-      options: {
-        transpileOnly: true, // default
-        compilerOptions: {
-          target: `esnext`,
-          experimentalDecorators: true,
-          jsx: `react`,
-        }, // default
-      },
-    },
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-netlify' // make sure to keep it last in the array
   ],
 }

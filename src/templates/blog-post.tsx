@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import  kebabCase  from 'lodash'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import * as React from 'react'
+
+interface BlogPostTemplateProbs {
+  contentComponent?: any;
+}
 
 const BlogPostTemplate = ({
   contentComponent
