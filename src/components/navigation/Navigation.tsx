@@ -21,7 +21,6 @@ export default class Navigation extends React.Component<NavigationProps, Navigat
 					<MenuLi>about</MenuLi>
 					<MenuLi>shop</MenuLi>
 					<MenuLi>lookbook</MenuLi>
-					<MenuLi>categories</MenuLi>
 				</MenuUl>
 			</MenuContainer>
 		);
@@ -34,14 +33,14 @@ const MenuContainer = styled('div')`
 	margin-left: 250px;
 	background-color: ${colors.lila};
 	display: flex;
-	justify-content: center;
 	font-size: 1.7rem;
 `
 
 const MenuUl = styled('ul')`
 	color: ${colors.white};
 	list-style: none;
-	margin-top: 15px;
+	margin-top: 25px;
+	margin-left: 25px;
 `
 
 const MenuLi = styled('li')`

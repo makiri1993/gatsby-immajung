@@ -34,18 +34,18 @@ const MenuContainer = styled('div')`
 	width: 300px;
 	height: 400px;
 	margin-left: 50px;
-	margin-top: -50px;
+	margin-top: -100px;
 	background-color: ${colors.green};
-	filter: invert();
+	mix-blend-mode: multiply;
 	display: flex;
-	justify-content: center;
 	font-size: 1.7rem;
 `
 
 const MenuUl = styled('ul')`
 	color: ${colors.black};
 	list-style: none;
-	margin-top: 15px;
+	margin-top: 25px;
+	margin-left: 25px;
 `
 
 const MenuLi = styled('li')`
