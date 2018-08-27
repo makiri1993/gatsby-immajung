@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Logo from '../components/Logo/Logo';
+import Logo from '../components/logo/Logo';
 import '../styles/reset.css';
 import Navigation from '../components/navigation/Navigation';
 import Footer from '../components/footer/Footer';
