@@ -5,8 +5,7 @@ export default class IndexPage extends React.Component {
 
   render() {
     return (
-      <div className="test">
-        <h1>INDEX.JS</h1>
+      <div>
       </div>
     );
   }

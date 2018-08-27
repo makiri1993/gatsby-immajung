@@ -1,29 +1,10 @@
 /* tslint:disable:max-line-length */
 
 export const colors = {
-  brand: '#663399',
-  lilac: '#9d7cbf',
-  accent: '#ffb238',
-  success: '#37b635',
-  warning: '#ec1818',
-  ui: {
-    bright: '#e0d6eb',
-    light: '#f5f3f7',
-    whisper: '#fbfafc'
-  },
-  code: '#fcf6f0',
-  gray: {
-    header: '#A3A3A3',
-    dark: 'hsla(270, 17.119554496%, 0%, 0.92)',
-    copy: 'hsla(270, 15.797828016000002%, 0%, 0.88)',
-    calm: 'rgba(0, 0, 0, 0.54)'
-  },
-  white: '#FCFCFC',
-  orange: '#ee7917',
-  green: '#00933f',
-  red: '#e53129',
-  blue: '#009BE1',
-  black: '#545456'
+  black: '#000000',
+  lila: '#711aec',
+  white: '#ffffff',
+  green: '#9ffe51'
 }
 
 export const fonts = {
