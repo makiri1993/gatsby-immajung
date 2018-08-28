@@ -10,7 +10,8 @@
   "rules": {
     "semicolon": [true, "never"],
     "no-boolean-literal-compare": false,
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "import-name": false
   },
   "rulesDirectory": []
 }
