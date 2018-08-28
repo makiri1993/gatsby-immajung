@@ -1,5 +1,5 @@
 import * as React from 'react'
-import reactEmotion from 'react-emotion'
+import styled from 'react-emotion'
 import Heroimage from '../components/heroimage/Heroimage'
 
 import Category from '../components/category/Category'
