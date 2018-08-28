@@ -23,6 +23,7 @@
     "gatsby-source-filesystem": "^1.5.23",
     "gatsby-transformer-remark": "^1.7.33",
     "gatsby-transformer-sharp": "^1.6.21",
+    "global": "^4.3.2",
     "invariant": "^2.2.4",
     "lodash": "^4.17.5",
     "lodash-webpack-plugin": "^0.11.4",
@@ -31,6 +32,7 @@
     "react": "^16.2.0",
     "react-emotion": "^9.2.6",
     "react-helmet": "^5.2.0",
+    "tslint-config-airbnb": "^5.10.0",
     "typescript": "^3.0.1",
     "uuid": "^3.2.1"
   },
@@ -48,8 +50,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.7.4",
-    "tslint": "^5.10.0",
+    "@storybook/addon-info": "^3.4.10",
+    "@types/jest": "^23.3.1",
+    "awesome-typescript-loader": "^5.2.0",
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "ts-jest": "^23.1.4",
+    "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.13.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.0.1"
