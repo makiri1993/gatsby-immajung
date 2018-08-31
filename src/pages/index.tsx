@@ -1,9 +1,8 @@
 import * as React from 'react'
 import styled from 'react-emotion'
-import Heroimage from '../components/heroimage/Heroimage'
+import Slider from '../components/slider/Slider';
+import SliderItem from '../components/slider/SliderItem';
 
-import Category from '../components/category/Category'
-import Pretext from '../components/pretext/Pretext'
 
 interface IndexProps {}
 
@@ -19,32 +18,19 @@ export default class Index extends React.Component<IndexProps, IndexState> {
   public render() {
     return (
       <MainContainer>
-        <Heroimage img={img} />
-        <Pretext
-          pretext="Gatsbyjs is based on Reactjs, Webpack, JavaScript and CSS. So it is
-		based on my favorite technologies. Ever heard about Static Progressive Web Apps?"
-        />
-        <Category category="Tech" />
-        <Button>read more</Button>
+        <Slider>
+          <SliderItem><h1>1</h1></SliderItem>
+          <SliderItem><h1>2</h1></SliderItem>
+          <SliderItem><h1>3</h1></SliderItem>
+        </Slider>
       </MainContainer>
     )
   }
 }
 
 const MainContainer = styled('div')`
-  font-size: 2.5rem;
-  width: 500px;
-  height: 700px;
-  margin-top: 50px;
-  margin-left: 100px;
-`
-
-const Button = styled('button')`
-  position: absolute;
-  font-size: 1.3rem;
-  margin-top: 650px;
-  margin-left: -450px;
-  z-index: 10000;
+  background-color: red;
+  overflow: hidden;
 `
 
 // IndexPage.propTypes = {
