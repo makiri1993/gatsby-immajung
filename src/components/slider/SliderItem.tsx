@@ -23,7 +23,9 @@ export default class Slider extends React.Component<SliderItemProps, SliderItemS
 
 const SliderItem = styled('div')`
 	background-color: green;
-	text-align: center;
-	padding: 50px;
+	margin-top: 50px;
 	color: white;
+	height: 80vh;
+	width: 80vw;
+	margin-left: 20px;
 `

@@ -51,12 +51,10 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
     /* Number of items */
     const items = children.length || 1
 
-    if (itemIndex - position < 0) {
+    if (items === 2) return itemIndex
       /* The abs method calculats the difference between two numbers */
-      return items - Math.abs(itemIndex - position)
-    }
-
-    return itemIndex - position
+    if (itemIndex - position < 0) return items - Math.abs(itemIndex - position)
+    return itemIndex  - position
   }
 
   /*
@@ -83,7 +81,7 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
     /* Number of items */
     const items = children.length || 1
 
-    this.slide('prev', position === items - 1 ? 0 : position - 1)
+    this.slide('prev', position === 0 ? items - 1 : position - 1)
 
   }
 
@@ -109,7 +107,7 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
 
   public render() {
     const { title, children } = this.props
-    const { sliding, direction } = this.state
+    const { sliding, direction, position } = this.state
     return(
       <div>
         <h2>{title}</h2>
@@ -123,7 +121,7 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
             sliding = { sliding }
             direction = { direction }>
             {children.map((child, index) => (
-            <SliderSlot key={index} order={this.getItemOrder(index)}> 
+            <SliderSlot key={index} order={this.getItemOrder(index)} position={ position }> 
                 {child} 
             </SliderSlot>))}
           </SliderContainer>
@@ -138,14 +136,13 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
 }
 
 const SliderWrapper = styled('div')`
-  width: 100%;
   /* Cuts everything that isnt seen, so the page has no horrizontal scrolling*/
   overflow: hidden;
 `
 
 const SliderContainer = styled('div')`
+  width: auto;
   display: flex;
-  margin: 0 0 20px 20px;
   /* All the stuff for the animation */
   transition: ${(props) => props.sliding ? 'none' : 'transform 1s ease'};
   transform: ${(props) => {
@@ -153,15 +150,17 @@ const SliderContainer = styled('div')`
     if (props.direction === 'prev') return 'translateX(calc(2 * (-80% - 20px)))'
     return 'translateX(0%)'
   }};
+
 `
 
 /* Slot for the items wich will sit in the SliderContainer*/
 const SliderSlot = styled('div')`
   /* width and height of the flex item*/
-  flex: 1 0 100%;
+  width: 80vw;
+  height: 80vh;
   /* base width of the flex item*/
-  flex-basis: 80%;
   margin-right: 20px;
   /* get the place in the DOM of the item */
   order: ${(props) => props.order};
+
 `

@@ -31,6 +31,7 @@ export default class Index extends React.Component<IndexProps, IndexState> {
 const MainContainer = styled('div')`
   background-color: red;
   overflow: hidden;
+  height: auto;
 `
 
 // IndexPage.propTypes = {
