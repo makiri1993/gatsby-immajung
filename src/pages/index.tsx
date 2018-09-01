@@ -2,6 +2,8 @@ import * as React from 'react'
 import styled from 'react-emotion'
 import Slider from '../components/slider/Slider';
 import SliderItem from '../components/slider/SliderItem';
+import { margins } from '../styles/variables'
+
 
 
 interface IndexProps {}
@@ -18,21 +20,35 @@ export default class Index extends React.Component<IndexProps, IndexState> {
   public render() {
     return (
       <MainContainer>
-        <Slider>
-          <SliderItem><h1>1</h1></SliderItem>
-          <SliderItem><h1>2</h1></SliderItem>
-          <SliderItem><h1>3</h1></SliderItem>
-        </Slider>
+        <h1>immajung</h1>
+        <SliderContainerMobile>
+          <Slider>
+            <SliderItem/>
+            <SliderItem/>
+            <SliderItem/>
+          </Slider>
+        </SliderContainerMobile>
       </MainContainer>
     )
   }
 }
 
 const MainContainer = styled('div')`
-  background-color: red;
-  overflow: hidden;
-  height: auto;
+  overflow-x: hidden;
+  margin-left: ${margins.small}px;
+  margin-right: ${margins.small}px;
+  @media (max-height: 570px) {
+    margin-left: ${margins.extrasmall}px;
+    margin-right: ${margins.extrasmall}px;
+  }
+
 `
+
+ const SliderContainerMobile = styled('div')`
+  @media (min-width: 485px) {
+    display: none;
+  }
+ `
 
 // IndexPage.propTypes = {
 //   data: PropTypes.shape({

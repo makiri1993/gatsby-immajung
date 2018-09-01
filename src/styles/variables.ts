@@ -1,10 +1,17 @@
 /* tslint:disable:max-line-length */
 
 export const colors = {
-  black: '#000000',
+  black: '#2b2b2b',
   lila: '#711aec',
   white: '#ffffff',
   green: '#9ffe51',
+}
+
+export const margins = {
+  extrasmall: 10,
+  small: 30,
+  medium: 50,
+  large: 80,
 }
 
 export const fonts = {

@@ -1,8 +1,10 @@
 import * as React from 'react'
+import { Children, cloneElement } from 'react';
+import { margins } from '../../styles/variables'
+
 import styled from 'react-emotion'
 const { throttle } = require('lodash')
 const Swipeable = require('react-swipeable')
-import { colors } from '../../styles/variables'
 
 interface SliderProps{
   title?: string
@@ -22,7 +24,7 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
     super(props)
     this.state = {
       position: 0,
-      sliding: false,
+      sliding: true,
       direction: 'next',
     }
   }
@@ -69,7 +71,6 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
     const items = children.length || 1
 
     this.slide('next', position === items - 1 ? 0 : position + 1)
-
   }
 
   /*
@@ -82,7 +83,6 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
     const items = children.length || 1
 
     this.slide('prev', position === 0 ? items - 1 : position - 1)
-
   }
 
   /*
@@ -97,7 +97,6 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
       direction,
       position,
     })
-    console.log(position)
     setTimeout(() => {
       this.setState({
         sliding: false,
@@ -108,9 +107,13 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
   public render() {
     const { title, children } = this.props
     const { sliding, direction, position } = this.state
+
+    const childrenWithProps = Children.map(children, (child) => cloneElement(child, {
+      numSlides: children.length || 1
+    })
+)
+
     return(
-      <div>
-        <h2>{title}</h2>
         <Swipeable
           onSwipingLeft={ () => this.handleSwipe(true) }
           onSwipingRight={ () => this.handleSwipe() }
@@ -119,7 +122,8 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
         <SliderWrapper>
           <SliderContainer
             sliding = { sliding }
-            direction = { direction }>
+            direction = { direction }
+            items = {children.length}>
             {children.map((child, index) => (
             <SliderSlot key={index} order={this.getItemOrder(index)} position={ position }> 
                 {child} 
@@ -127,27 +131,42 @@ export default class Slider extends React.Component<SliderProps, SliderState> {
           </SliderContainer>
         </SliderWrapper>
         </Swipeable>
-        <button onClick={ () => this.nextItem() }>Next</button>
-        <button onClick={ () => this.prevItem() }>Prev</button>
-
-      </div>
     )
   }
 }
 
 const SliderWrapper = styled('div')`
   /* Cuts everything that isnt seen, so the page has no horrizontal scrolling*/
-  overflow: hidden;
 `
 
 const SliderContainer = styled('div')`
-  width: auto;
   display: flex;
+  width: 100%;
   /* All the stuff for the animation */
   transition: ${(props) => props.sliding ? 'none' : 'transform 1s ease'};
+  /* Here is a bug with the order of the items*/
   transform: ${(props) => {
-    if (!props.sliding) return 'translateX(calc(-80% - 20px))'
-    if (props.direction === 'prev') return 'translateX(calc(2 * (-80% - 20px)))'
+    if (props.items === 1) {
+      return 'translateX(0%)'
+    }
+    if (props.items === 2) {
+      if (!props.sliding && props.direction === 'next') {
+        return 'translateX(calc(-80% + 30px))'
+      }
+      if (!props.sliding && props.direction === 'prev') {
+        return 'translateX(0%)'
+      }
+      if (props.direction === 'prev') { 
+        return 'translateX(calc(-80% + 30px))'
+      }
+      return 'translateX(0%)'
+    }
+    if (!props.sliding) {
+      return 'translateX(calc(-100% - 20px))'
+    }
+    if (props.direction === 'prev') {
+      return 'translateX(calc(2 * (-100% - 20px)))'
+    }
     return 'translateX(0%)'
   }};
 
@@ -156,11 +175,13 @@ const SliderContainer = styled('div')`
 /* Slot for the items wich will sit in the SliderContainer*/
 const SliderSlot = styled('div')`
   /* width and height of the flex item*/
-  width: 80vw;
-  height: 80vh;
-  /* base width of the flex item*/
-  margin-right: 20px;
+  flex: 0 0 auto;
+  height: auto;
+  width: 90vw;
   /* get the place in the DOM of the item */
   order: ${(props) => props.order};
+  @media (max-height: 570px) {
+    width: 100vw;
+  }
 
 `
