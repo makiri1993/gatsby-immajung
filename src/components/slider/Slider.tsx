@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Children, cloneElement } from 'react';
 import { margins } from '../../styles/variables'
-
 import styled from 'react-emotion'
 const { throttle } = require('lodash')
 const Swipeable = require('react-swipeable')

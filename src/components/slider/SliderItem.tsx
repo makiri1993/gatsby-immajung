@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'react-emotion'
 import { colors, margins } from '../../styles/variables'
-import Title from '../title/Title';
+import Link from 'gatsby-link'
 
 interface SliderItemProps{
   title: string
@@ -10,7 +10,7 @@ interface SliderItemProps{
   imgalt: string
   imgtitle: string
   preText: string
-  ling: string
+  link: string
 }
 
 interface SliderItemState{}
@@ -27,16 +27,16 @@ export default class Slider extends React.Component<SliderItemProps, SliderItemS
     return(
 		<div>
 			<SliderItem>
-				<Title>Why we used Gatsby?</Title>
+				<Title>{this.props.title}</Title>
 				<Cat>Tech</Cat>
 				<FeatureImgContainer>
 					<FeaturedImg src={img} />
 				</FeatureImgContainer>
 			</SliderItem>
 			<PreTextContainer>
-				There are lots of advantages to writing on public platforms like Medium over static site generators. If you write in public platforms, you can write on a laptop, and edit on your phone.
+					{this.props.preText}
 				<br/>
-				<ReadMore href="#">Read more..</ReadMore>
+				<ReadMore to={this.props.link}>Read more..</ReadMore>
 			</PreTextContainer>
 		</div>
     )
@@ -90,7 +90,7 @@ const PreTextContainer = styled('div')`
   }
 `
 
-const ReadMore = styled('a')`
+const ReadMore = styled(Link)`
 	text-decoration: none;
 	color: ${colors.lila};
 `

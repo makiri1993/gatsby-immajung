@@ -6,7 +6,13 @@ import { margins } from '../styles/variables'
 
 
 
-interface IndexProps {}
+interface IndexProps {
+  data: {
+    allMarkdownRemark: {
+      edges: PostExcerptNode[];
+    }
+  }
+}
 
 interface IndexState {}
 
@@ -17,15 +23,23 @@ export default class Index extends React.Component<IndexProps, IndexState> {
     super(props)
     this.state = {}
   }
+
+  data: {
+    allMarkdownRemark: { edges }
+  }
+  
   public render() {
+    for(var i = 0; i < this.props.data.allMarkdownRemark.edges.length; i++ ) {
+      console.log("Data: " + this.props.data.allMarkdownRemark.edges[i].node.frontmatter.title)
+    }
     return (
       <MainContainer>
         <h1>immajung</h1>
         <SliderContainerMobile>
           <Slider>
-            <SliderItem/>
-            <SliderItem/>
-            <SliderItem/>
+         { this.props.data.allMarkdownRemark.edges.map((post, index) => (
+            <SliderItem title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
+          ))}
           </Slider>
         </SliderContainerMobile>
       </MainContainer>
@@ -43,7 +57,7 @@ const MainContainer = styled('div')`
   }
 
 `
-
+/* Show the slider on mobile only */
  const SliderContainerMobile = styled('div')`
   @media (min-width: 485px) {
     display: none;
@@ -58,27 +72,24 @@ const MainContainer = styled('div')`
 //   })
 // };
 
-// export const pageQuery = graphql`
-//   query IndexQuery {
-//     allMarkdownRemark(
-//       sort: { order: DESC, fields: [frontmatter___date] }
-//       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-//     ) {
-//       edges {
-//         node {
-//           excerpt(pruneLength: 400)
-//           id
-//           htmlAst
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//             templateKey
-//             date(formatString: "MMMM DD, YYYY")
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const pageQuery = graphql`
+query IndexQuery {
+  allMarkdownRemark(
+    sort: { order: DESC, fields: [frontmatter___date] }
+  ) {
+    edges {
+      node {
+        id
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 250)
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+        }
+      }
+    }
+  }
+}
+`;

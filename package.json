@@ -11,7 +11,7 @@
     "bulma": "^0.6.0",
     "emotion": "^9.2.6",
     "emotion-server": "^9.2.6",
-    "gatsby": "^1.9.213",
+    "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.37",
     "gatsby-plugin-emotion": "^1.1.17",
     "gatsby-plugin-netlify": "^1.0.19",
