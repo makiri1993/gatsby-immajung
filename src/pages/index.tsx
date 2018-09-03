@@ -1,10 +1,9 @@
 import * as React from 'react'
 import styled from 'react-emotion'
+import Helmet from 'react-helmet'
 import Slider from '../components/slider/Slider';
 import SliderItem from '../components/slider/SliderItem';
 import { margins } from '../styles/variables'
-
-
 
 interface IndexProps {
   data: {
@@ -34,6 +33,12 @@ export default class Index extends React.Component<IndexProps, IndexState> {
     }
     return (
       <MainContainer>
+              <Helmet>
+        <meta charSet="utf-8" />
+        <title>Blog | immajung - when streetwear meets it</title>
+        <link rel="canonical" href="https://www.immajung.com" />
+        <meta name="description" content="immajung  streetwear brand from germany."></meta>
+      </Helmet>
         <h1>immajung</h1>
         <SliderContainerMobile>
           <Slider>

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Helmet from 'react-helmet'
 import Wrapper from '../components/blogpost/Wrapper'
 
 interface BlogPostTemplateProbs {
@@ -11,9 +12,15 @@ const BlogPostTemplate = ({
   data,
 }) => {
   const PostContent = data
-  console.log(PostContent.markdownRemark.html)
   return (
-      <Wrapper blogpostcontent={PostContent.markdownRemark.html} />
+      <Wrapper blogpostcontent={PostContent.markdownRemark.html}>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{PostContent.markdownRemark.frontmatter.title}</title>
+          <link rel="canonical" href="https://www.immajung.com" />
+          <meta name="description" content={PostContent.markdownRemark.frontmatter.description} />
+        </Helmet>
+      </Wrapper>
   )
 }
 export default BlogPostTemplate
