@@ -1,6 +1,6 @@
+import Helmet from 'gatsby-plugin-react-helmet'
 import * as React from 'react'
 import styled from 'react-emotion'
-import Helmet from 'react-helmet'
 import Slider from '../components/slider/Slider';
 import SliderItem from '../components/slider/SliderItem';
 import { margins } from '../styles/variables'

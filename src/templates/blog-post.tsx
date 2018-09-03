@@ -1,5 +1,5 @@
+import Helmet from 'gatsby-plugin-react-helmet'
 import * as React from 'react'
-import Helmet from 'react-helmet'
 import Wrapper from '../components/blogpost/Wrapper'
 
 interface BlogPostTemplateProbs {
