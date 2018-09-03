@@ -1,15 +1,15 @@
-import Helmet from 'gatsby-plugin-react-helmet'
 import * as React from 'react'
 import styled from 'react-emotion'
-import Slider from '../components/slider/Slider';
-import SliderItem from '../components/slider/SliderItem';
+import Helmet from 'react-helmet'
+import Slider from '../components/slider/Slider'
+import SliderItem from '../components/slider/SliderItem'
 import { margins } from '../styles/variables'
 
 interface IndexProps {
   data: {
     allMarkdownRemark: {
       edges: PostExcerptNode[];
-    }
+    },
   }
 }
 
@@ -22,23 +22,18 @@ export default class Index extends React.Component<IndexProps, IndexState> {
     super(props)
     this.state = {}
   }
-
   data: {
     allMarkdownRemark: { edges }
   }
-  
   public render() {
-    for(var i = 0; i < this.props.data.allMarkdownRemark.edges.length; i++ ) {
-      console.log("Data: " + this.props.data.allMarkdownRemark.edges[i].node.frontmatter.title)
-    }
     return (
       <MainContainer>
-              <Helmet>
-        <meta charSet="utf-8" />
-        <title>Blog | immajung - when streetwear meets it</title>
-        <link rel="canonical" href="https://www.immajung.com" />
-        <meta name="description" content="immajung  streetwear brand from germany."></meta>
-      </Helmet>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Blog | immajung - when streetwear meets it</title>
+          <link rel="canonical" href="https://www.immajung.com" />
+          <meta name="description" content="immajung  streetwear brand from germany."></meta>
+        </Helmet>
         <h1>immajung</h1>
         <SliderContainerMobile>
           <Slider>
