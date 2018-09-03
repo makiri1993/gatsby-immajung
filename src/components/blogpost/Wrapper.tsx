@@ -26,10 +26,11 @@ export default class Wrapper extends React.Component<WrapperProps>{
 }
 
 const MainContainer = styled('div')`
+	overflow: hidden;
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-top: 20px;
-	@media (min-width: 485px) {
+	@media (min-width: 600px) {
 		margin-left: 200px;
 		margin-right: 200px;
 		margin-top: 20px;  
@@ -43,5 +44,9 @@ const WrapperContainer = styled('div')`
 	img {
 		width:100%;
 		height: auto;
+	}
+
+	ol, ul {
+		margin-left: 40px;
 	}
 `
