@@ -11,6 +11,5 @@ export default TemplateWrapper
 
 const MainContainer = styled('div')`
   height: 100vh;
-  width: 100%;
-  display: flex;
+  width: 100vw;
 `
