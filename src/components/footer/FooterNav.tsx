@@ -1,7 +1,7 @@
+import Link from 'gatsby-link'
 import * as React from 'react'
 import styled from 'react-emotion'
 import { colors, margins } from '../../styles/variables'
-import Link from 'gatsby-link'
 
 interface IFooterNavProps {}
 
@@ -15,16 +15,10 @@ export default class FooterNav extends React.Component<IFooterNavProps> {
       <FooterNavContainer>
         <FooterNavUL>
           <FoterNavLI>
-            <FoterNavLink href="#">Impressum</FoterNavLink>
+            <FoterNavLink title="link to impressum" to="/impressum">Impressum</FoterNavLink>
           </FoterNavLI>
           <FoterNavLI>
-            <FoterNavLink href="#">Datenschutz</FoterNavLink>
-          </FoterNavLI>
-          <FoterNavLI>
-            <FoterNavLink href="#">Contact</FoterNavLink>
-          </FoterNavLI>
-          <FoterNavLI>
-            <FoterNavLink href="#">Sitemap</FoterNavLink>
+            <FoterNavLink title="link to datenschutz" to="/datenschutz">Datenschutz</FoterNavLink>
           </FoterNavLI>
         </FooterNavUL>
       </FooterNavContainer>
@@ -47,7 +41,7 @@ const FoterNavLI = styled('li')`
   color: ${colors.white};
 `
 
-const FoterNavLink = styled('a')`
+const FoterNavLink = styled(Link)`
   text-decoration: none;
   color: ${colors.white};
   :hover {

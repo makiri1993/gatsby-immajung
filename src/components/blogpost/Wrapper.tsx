@@ -30,10 +30,16 @@ const MainContainer = styled('div')`
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-top: 20px;
+	min-height: 60vh;
 	@media (min-width: 600px) {
 		margin-left: 200px;
 		margin-right: 200px;
-		margin-top: 20px;  
+		margin-top: 20px;
+		}
+		@media (min-width: 1600px) {
+		margin-left: 400px;
+		margin-right: 400px;
+		margin-top: 20px;
 		}
 `
 

@@ -42,7 +42,7 @@ export default class Slider extends React.Component<IBlogPostItemProps> {
 const BlogPostItemContainer = styled('div')`
   margin-top: ${margins.medium + 20}px;
   width: 400px;
-  height: auto;
+	height: auto;
 `
 const FeatureImgContainer = styled('div')`
 	width: 100%;
