@@ -1,7 +1,6 @@
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import * as React from 'react'
 import styled from 'react-emotion'
-import { colors, margins } from '../../styles/variables'
-
 interface IFooterSocialMediaProps {}
 
 const instagram: string = require('../../img/socialmedia/instagram.svg') 
@@ -16,7 +15,7 @@ export default class FooterSocialMedia extends React.Component<IFooterSocialMedi
       <FooterSocialMediaContainer>
         <FooterSocialMediaH3>Follow us on:</FooterSocialMediaH3>
         <br/>
-        <a target="_blank" title="link to immajung instagram page" href="https://www.instagram.com/immajung.clo/"><FooterSocialMediaImg title="instagram logo" alt="instagram logo" src={instagram}/></a>
+        <OutboundLink target="_blank" title="link to immajung instagram page" href="https://www.instagram.com/immajung.clo/"><FooterSocialMediaImg title="instagram logo" alt="instagram logo" src={instagram}/></OutboundLink>
       </FooterSocialMediaContainer>
     )
   }

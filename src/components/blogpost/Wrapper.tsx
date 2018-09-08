@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'react-emotion'
 import { colors, margins } from '../../styles/variables'
+import SocialmediaBar from '../callToActionComponents/socialmediabar/SocialmediaBar';
 
 interface WrapperProps {
   blogpostcontent: string
@@ -19,6 +20,7 @@ export default class Wrapper extends React.Component<WrapperProps> {
   public render() {
     return(
 			<MainContainer>
+				<SocialmediaBar />
 				<WrapperContainer dangerouslySetInnerHTML={this.createMarkup()} />
 			</MainContainer>
     )

@@ -14,6 +14,12 @@ export default class Datenschutz extends React.Component<IDatenschutzProps> {
   public render() {
     return(
       <MainContainer>
+               <Helmet>
+          <meta charSet="utf-8" />
+          <title>Datenschutzerklärung | immajung - when streetwear meets it</title>
+          <link rel="canonical" href="https://www.immajung.com" />
+          <meta name="description" content="immajung  streetwear brand from germany."></meta>
+        </Helmet>
         <h2>Datenschutzerklärung</h2>
         <br />
         <p>

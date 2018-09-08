@@ -21,15 +21,14 @@ export default class Index extends React.Component<IndexProps, IndexState> {
     super(props)
     this.state = {}
   }
-  data: {
-    allMarkdownRemark: { edges }
-  }
+  data: { allMarkdownRemark: { edges } } 
+
   public render() {
     return (
       <MainContainer>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Blog | immajung - when streetwear meets it</title>
+          <title>Blog | immajung - when streetwear meets IT</title>
           <link rel="canonical" href="https://www.immajung.com" />
           <meta name="description" content="immajung  streetwear brand from germany."></meta>
         </Helmet>

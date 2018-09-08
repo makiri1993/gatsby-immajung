@@ -14,12 +14,18 @@ export default class Datenschutz extends React.Component<IImpressumProps> {
   public render() {
     return(
       <MainContainer>
+          <Helmet>
+          <meta charSet="utf-8" />
+          <title>Impressum | immajung - when streetwear meets it</title>
+          <link rel="canonical" href="https://www.immajung.com" />
+          <meta name="description" content="immajung  streetwear brand from germany."></meta>
+        </Helmet>
         <h1>Impressum</h1>
         <br />
         <p>
           Immajung was founded by Martin Kiriew, Ilias Zales, Dennis Piotrowski and Karim Ould Mahieddine in 2018.
           <br/>
-          The brand intends to merge mordern streetwear and computer sience konzepts.
+          The brand intends to merge mordern streetwear and computer science concepts.
           <br/>
           <br/>
           Angaben gemäß § 5 TMG:
