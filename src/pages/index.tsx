@@ -34,7 +34,6 @@ export default class Index extends React.Component<IndexProps, IndexState> {
           <link rel="canonical" href="https://www.immajung.com" />
           <meta name="description" content="immajung  streetwear brand from germany."></meta>
         </Helmet>
-        <h1>immajung</h1>
         <SliderContainerMobile>
           <Slider>
          { this.props.data.allMarkdownRemark.edges.map((post, index) => (
@@ -42,6 +41,7 @@ export default class Index extends React.Component<IndexProps, IndexState> {
           ))}
           </Slider>
         </SliderContainerMobile>
+
       </MainContainer>
     )
   }
