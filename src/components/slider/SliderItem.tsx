@@ -15,8 +15,6 @@ interface SliderItemProps{
 
 interface SliderItemState{}
 
-const img: string = require('../../img/test_bild.jpg') 
-
 export default class Slider extends React.Component<SliderItemProps, SliderItemState>{
   constructor(props: SliderItemProps) {
     super(props)
@@ -30,7 +28,7 @@ export default class Slider extends React.Component<SliderItemProps, SliderItemS
 				<Title>{this.props.title}</Title>
 				<Cat>Tech</Cat>
 				<FeatureImgContainer>
-					<FeaturedImg src={img} />
+					<FeaturedImg src={this.props.imgsrc} />
 				</FeatureImgContainer>
 			</SliderItem>
 			<PreTextContainer>

@@ -16,8 +16,6 @@ interface IndexProps {
 
 interface IndexState {}
 
-const img: string = require('../img/test_bild.jpg')
-
 export default class Index extends React.Component<IndexProps, IndexState> {
   constructor(props: IndexProps) {
     super(props)
@@ -38,13 +36,13 @@ export default class Index extends React.Component<IndexProps, IndexState> {
         <SliderContainerMobile>
           <Slider>
          { this.props.data.allMarkdownRemark.edges.map((post, index) => (
-            <SliderItem title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
+            <SliderItem imgsrc={post.node.frontmatter.featuredImage} title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
           ))}
           </Slider>
         </SliderContainerMobile>
           <BlogContainerDesktop>
           { this.props.data.allMarkdownRemark.edges.map((post, index) => (
-            <BlogPostCard title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
+            <BlogPostCard imgsrc={post.node.frontmatter.featuredImage} title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
           ))}
           </BlogContainerDesktop>
       </MainContainer>
@@ -104,6 +102,7 @@ query IndexQuery {
         }
         excerpt(pruneLength: 250)
         frontmatter {
+          featuredImage
           date(formatString: "MMMM DD, YYYY")
           title
         }
