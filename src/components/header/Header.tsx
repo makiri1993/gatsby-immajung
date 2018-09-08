@@ -23,7 +23,6 @@ export default class Header extends React.Component <IHeaderProps> {
 
 const HeaderContainer = styled('div')`
   width: 100%;
-  min-height: 300px;
   color: ${colors.black};
 `
 

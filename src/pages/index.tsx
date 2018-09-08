@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'react-emotion'
 import Helmet from 'react-helmet'
+import BlogPostCard from '../components/blogpostItemDesktop/BlogPostItemDesktop'
 import Slider from '../components/slider/Slider'
 import SliderItem from '../components/slider/SliderItem'
 import { margins } from '../styles/variables'
@@ -41,7 +42,11 @@ export default class Index extends React.Component<IndexProps, IndexState> {
           ))}
           </Slider>
         </SliderContainerMobile>
-
+          <BlogContainerDesktop>
+          { this.props.data.allMarkdownRemark.edges.map((post, index) => (
+            <BlogPostCard title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
+          ))}
+          </BlogContainerDesktop>
       </MainContainer>
     )
   }
@@ -51,6 +56,9 @@ const MainContainer = styled('div')`
   overflow-x: hidden;
   margin-left: ${margins.small}px;
   margin-right: ${margins.small}px;
+  @media (min-width: 485px) {
+    overflow: visible;
+  }
   @media (max-height: 570px) {
     margin-left: ${margins.extrasmall}px;
     margin-right: ${margins.extrasmall}px;
@@ -58,8 +66,19 @@ const MainContainer = styled('div')`
 
 `
 /* Show the slider on mobile only */
- const SliderContainerMobile = styled('div')`
+const SliderContainerMobile = styled('div')`
   @media (min-width: 485px) {
+    display: none;
+  }
+ `
+
+const BlogContainerDesktop = styled('div')`
+  margin-top: ${margins.small}px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  @media (max-width: 485px) {
     display: none;
   }
  `

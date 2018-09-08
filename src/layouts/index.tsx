@@ -10,13 +10,13 @@ const TemplateWrapper: React.SFC = ({ children = this.children }) => (
   <MainContainer>
     <Header />
     {children()}
-    <Footer />
   </MainContainer>
+  <Footer />
   </div>
 )
 export default TemplateWrapper
 
 const MainContainer = styled('div')`
-  height: 100vh;
+  height: 100%;
   width: 100%;
 `
