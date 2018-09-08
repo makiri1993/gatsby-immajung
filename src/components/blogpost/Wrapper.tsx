@@ -3,18 +3,18 @@ import styled from 'react-emotion'
 import { colors, margins } from '../../styles/variables'
 
 interface WrapperProps {
-	blogpostcontent: string
+  blogpostcontent: string
 }
 
-export default class Wrapper extends React.Component<WrapperProps>{
+export default class Wrapper extends React.Component<WrapperProps> {
   constructor(props: WrapperProps) {
     super(props)
     this.state = { }
-	}
-	
-	public const createMarkup() {
-		return {__html: this.props.blogpostcontent }
-	}
+  }
+
+  public const createMarkup() {
+    return { __html: this.props.blogpostcontent }
+  }
 
   public render() {
     return(
@@ -42,8 +42,9 @@ const WrapperContainer = styled('div')`
 	color: ${colors.black};
 
 	img {
-		width:100%;
-		height: auto;
+		display: block;
+    margin-left: auto;
+    margin-right: auto;
 	}
 
 	ol, ul {

@@ -1,7 +1,7 @@
+import Link from 'gatsby-link'
 import * as React from 'react'
 import styled from 'react-emotion'
 import { colors, margins } from '../../styles/variables'
-import Link from 'gatsby-link'
 
 interface IBlogPostItemProps {
   title: string
@@ -25,27 +25,28 @@ export default class Slider extends React.Component<IBlogPostItemProps> {
     return(
       <BlogPostItemContainer>
 				<Title>{this.props.title}</Title>
-				<Cat>Tech</Cat>
+				<Cat>{this.props.cat}</Cat>
 				<FeatureImgContainer>
-					<FeaturedImg src={img} />
+					<FeaturedImg title="Featured image from the Blogpost" alt="Featured image from the Blogpost" src={this.props.imgsrc} />
 				</FeatureImgContainer>
 			<PreTextContainer>
 					{this.props.preText}
 				<br/>
-				<ReadMore to={this.props.link}>Read more..</ReadMore>
-      </PreTextContainer>
+				<ReadMore title="Link to the Blogpost" to={this.props.link}>Read more..</ReadMore>
+			</PreTextContainer>
       </BlogPostItemContainer>
     )
   }
 }
 
 const BlogPostItemContainer = styled('div')`
-  margin-top: ${margins.small}px;
+  margin-top: ${margins.medium + 20}px;
   width: 400px;
   height: auto;
 `
 const FeatureImgContainer = styled('div')`
 	width: 100%;
+	min-height: 300px;
 	max-height: auto;
 `
 
@@ -58,18 +59,16 @@ const Title = styled('h1')`
 	position: absolute;
 	color: ${colors.black};
 	background-color: ${colors.white};
-  margin-top: -20px;
-  margin-left: 130px;
+	margin-top: -70px;
+	width: 300px;
 	display: block;
-	width: 200px;
 `
 const Cat = styled('h2')`
 	position: absolute;
 	color: ${colors.black};
 	background-color: ${colors.white};
-	margin-top: 300px;
-	margin-left: -20px;
 	display: block;
+	margin-top: 100px;
 	width: 100px;
 	text-align: center;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

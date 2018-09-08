@@ -26,15 +26,15 @@ export default class Slider extends React.Component<SliderItemProps, SliderItemS
 		<div>
 			<SliderItem>
 				<Title>{this.props.title}</Title>
-				<Cat>Tech</Cat>
+				<Cat>{this.props.cat}</Cat>
 				<FeatureImgContainer>
-					<FeaturedImg src={this.props.imgsrc} />
+					<FeaturedImg title="Featured image from the Blogpost" alt="Featured image from the Blogpost" src={this.props.imgsrc} />
 				</FeatureImgContainer>
 			</SliderItem>
 			<PreTextContainer>
 					{this.props.preText}
 				<br/>
-				<ReadMore to={this.props.link}>Read more..</ReadMore>
+				<ReadMore title="Link to the Blogpost" to={this.props.link}>Read more..</ReadMore>
 			</PreTextContainer>
 		</div>
     )
@@ -59,19 +59,17 @@ const FeaturedImg = styled('img')`
 `
 
 const Title = styled('h1')`
-	position: absolute;
 	color: ${colors.black};
 	background-color: ${colors.white};
 	margin-top: -20px;
 	display: block;
-	width: 200px;
+	width: 100%;
 `
 const Cat = styled('h2')`
 	position: absolute;
+	margin-top: 10px;
 	color: ${colors.black};
 	background-color: ${colors.white};
-	margin-top: 300px;
-	margin-left: 50vw;
 	display: block;
 	width: 100px;
 	text-align: center;

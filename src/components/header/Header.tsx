@@ -1,3 +1,4 @@
+import Link from 'gatsby-link'
 import * as React from 'react'
 import styled from 'react-emotion'
 import { colors, margins } from '../../styles/variables'
@@ -13,7 +14,7 @@ export default class Header extends React.Component <IHeaderProps> {
   public render() {
     return(
       <HeaderContainer>
-        <HeaderLink href="#" title="Link to homepage">
+        <HeaderLink to="/" title="Link to homepage">
          <HeaderTitle>immajung</HeaderTitle>
         </HeaderLink>
       </HeaderContainer>
@@ -31,7 +32,7 @@ const HeaderTitle = styled('h1')`
   margin-top: ${margins.small}px;
 `
 
-const HeaderLink = styled('a')`
+const HeaderLink = styled(Link)`
   color: ${colors.black};
   text-decoration: none;
   :hover {

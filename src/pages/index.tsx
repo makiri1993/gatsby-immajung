@@ -36,13 +36,13 @@ export default class Index extends React.Component<IndexProps, IndexState> {
         <SliderContainerMobile>
           <Slider>
          { this.props.data.allMarkdownRemark.edges.map((post, index) => (
-            <SliderItem imgsrc={post.node.frontmatter.featuredImage} title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
+            <SliderItem cat={post.node.frontmatter.category} imgsrc={post.node.frontmatter.featuredImage} title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
           ))}
           </Slider>
         </SliderContainerMobile>
           <BlogContainerDesktop>
           { this.props.data.allMarkdownRemark.edges.map((post, index) => (
-            <BlogPostCard imgsrc={post.node.frontmatter.featuredImage} title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
+            <BlogPostCard cat={post.node.frontmatter.category} imgsrc={post.node.frontmatter.featuredImage} title={post.node.frontmatter.title} preText={post.node.excerpt} link={post.node.fields.slug}/>
           ))}
           </BlogContainerDesktop>
       </MainContainer>
@@ -102,6 +102,7 @@ query IndexQuery {
         }
         excerpt(pruneLength: 250)
         frontmatter {
+          category
           featuredImage
           date(formatString: "MMMM DD, YYYY")
           title
