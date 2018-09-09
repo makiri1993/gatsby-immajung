@@ -29,9 +29,17 @@ const SocialmediaBarContainer = styled('div')`
   z-index: 1000;
   right: 0;
   top: 120px;
+  @media (max-width: 485px) {
+    width: 25px;
+    height: 25px;
+    }
 `
 
 const SocialMediaImg = styled('img')`
   width: 50px;
   height: auto;
+  @media (max-width: 485px) {
+    width: 25px;
+    height: auto;
+    }
 `
