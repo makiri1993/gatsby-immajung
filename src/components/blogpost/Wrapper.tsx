@@ -68,4 +68,14 @@ const WrapperContainer = styled('div')`
 		color: ${colors.white};
 		font-family: monospaced;
 	}
+
+	h1 {
+		text-align: center;
+	}
+		@media (max-width: 600px) {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 `
