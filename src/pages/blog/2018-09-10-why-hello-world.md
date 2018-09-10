@@ -53,22 +53,24 @@ So after we installed the IDE "Eclipse" and Java, and it took unusually long, we
 
 ```
 public class HelloWorld {
-```
 
 ```
 
 ```
 
 ```
-public static void main(String[] args) {
+
+```
+    public static void main(String[] args) {
+
 ```
 
 ```
-System.out.println("Hello, World");
+        System.out.println("Hello, World");
 ```
 
 ```
-}    
+    }    
 ```
 
 ```

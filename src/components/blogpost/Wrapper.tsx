@@ -58,4 +58,14 @@ const WrapperContainer = styled('div')`
 	ol, ul {
 		margin-left: 40px;
 	}
+
+	p {
+  margin-bottom: 30px; /* between paragraphs */
+  }
+
+	pre {
+		background-color: ${colors.black};
+		color: ${colors.white};
+		font-family: monospaced;
+	}
 `

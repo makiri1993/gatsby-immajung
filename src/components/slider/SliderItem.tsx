@@ -56,6 +56,9 @@ const FeatureImgContainer = styled('div')`
 const FeaturedImg = styled('img')`
 	max-height: 80vh;
 	max-width: 80%;
+	display: block;
+   margin-left: auto;
+	margin-right: auto;
 `
 
 const Title = styled('h1')`
@@ -64,14 +67,15 @@ const Title = styled('h1')`
 	margin-top: -20px;
 	display: block;
 	width: 100%;
+	text-align: center;
 `
 const Cat = styled('h2')`
 	position: absolute;
-	margin-top: 10px;
+	margin-top: 70%;
 	color: ${colors.black};
 	background-color: ${colors.white};
 	display: block;
-	width: 100px;
+	width: auto;
 	text-align: center;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `

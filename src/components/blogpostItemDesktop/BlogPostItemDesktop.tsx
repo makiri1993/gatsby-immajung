@@ -68,8 +68,8 @@ const Cat = styled('h2')`
 	color: ${colors.black};
 	background-color: ${colors.white};
 	display: block;
-	margin-top: 100px;
-	width: 100px;
+	margin-top: 300px;
+	width: auto;
 	text-align: center;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
