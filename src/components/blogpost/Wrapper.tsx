@@ -69,6 +69,12 @@ const WrapperContainer = styled('div')`
 		font-family: monospaced;
 	}
 
+	code {
+		background-color: ${colors.black};
+		color: ${colors.white};
+		font-family: monospaced;
+	}
+
 	h1 {
 		text-align: center;
 	}

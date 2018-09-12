@@ -28,9 +28,9 @@ export default class Index extends React.Component<IndexProps, IndexState> {
       <MainContainer>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Blog | immajung - when streetwear meets IT</title>
+          <title>immajung - when streetwear meets IT. A german streetwear brand</title>
           <link rel="canonical" href="https://www.immajung.com" />
-          <meta name="description" content="immajung  streetwear brand from germany."></meta>
+          <meta name="description" content="Immajung is a streetwear brand from germany. Immajung merges modern streetwear with computer science concepts.  Fashion for nerds and streetwear lovers worldwide"></meta>
         </Helmet>
         <SliderContainerMobile>
           <Slider>

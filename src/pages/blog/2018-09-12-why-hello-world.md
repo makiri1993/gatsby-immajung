@@ -49,9 +49,9 @@ So after we installed the IDE "[Eclipse](https://www.eclipse.org/)" and [Java](h
 
 `    public static void main(String[] args) {`
 
-`        System.out.println("Hello, World");`
+`       System.out.println("Hello, World");`
 
-`    }    `
+`     }    `
 
 `}`
 
