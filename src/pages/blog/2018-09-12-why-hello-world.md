@@ -17,7 +17,7 @@ tags:
 
 # Why Hello World ?
 
-In this blog entry we would like to explain to you why and how we chose the theme "Hello World" for our first piece.
+In this blog entry we would like to explain to you why and how we chose the theme "Hello World" for our first piece
 
 The myth "[Hello World](http://helloworldcollection.de/)" itself has been known since 1974 by the Canadian computer scientist Brian Kernighan. The hype about these lines of code did not begin until 1978, when the book "[The C Programming Language](https://en.wikipedia.org/wiki/The_C_Programming_Language)" by Brian Kernighan and Dennis Ritchie was published. This was the starting shot for pretty much every first line of code of a programmer. These lines have brought programming and computer science closer to many people and have had an impact on the technology scene to this day. Many who read this blog entry probably have a technical background. So I want you to remember a short moment back how your beginnings in programming were. What effort did the installation of the language and the required configuration take and what content did your first program have?
 
