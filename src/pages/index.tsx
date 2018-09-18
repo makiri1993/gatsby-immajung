@@ -3,7 +3,6 @@ import styled from 'react-emotion'
 import Helmet from 'react-helmet'
 import BlogPostCard from '../components/blogpostItemDesktop/BlogPostItemDesktop'
 import Slider from '../components/slider/Slider'
-import SliderItem from '../components/slider/SliderItem'
 import { margins } from '../styles/variables'
 
 interface IndexProps {

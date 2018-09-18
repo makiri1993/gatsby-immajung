@@ -7,6 +7,4 @@ injectGlobal`
   padding: 0 0 0 0;
   font-family: 'Poppins';
 }
-
-
 `

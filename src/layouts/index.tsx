@@ -3,16 +3,16 @@ import styled from 'react-emotion'
 import Footer from '../components/footer/Footer'
 import '../styles/normalize'
 import './style.css'
-import Header from '../components/header/Header';
+import Header from '../components/header/Header'
 
 const TemplateWrapper: React.SFC = ({ children = this.children }) => (
-  <div>
-  <MainContainer>
-    <Header />
-    {children()}
-  </MainContainer>
-  <Footer />
-  </div>
+  <>
+    <MainContainer>
+      <Header />
+      {children()}
+    </MainContainer>
+    <Footer />
+  </>
 )
 export default TemplateWrapper
 

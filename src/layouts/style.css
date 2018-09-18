@@ -9,10 +9,12 @@
 
 @font-face {
   font-family: "Poppins";
+  src: url("./Poppins-Regular.woff2"); /* IE9 Compat Modes */
   src: url("./Poppins-Regular.woff2?#iefix") format("embedded-opentype"),
     /* IE6-IE8 */ url("./Poppins-Regular.woff2") format("woff2"),
     /* Super Modern Browsers */ url("./Poppins-Regular.woff2") format("woff"),
-    /* Pretty Modern Browsers */ url("./Poppins-Regular.ttf") format("truetype"); /* Safari, Android, iOS */
+    /* Pretty Modern Browsers */ url("./Poppins-Regular.woff2")
+      format("truetype"); /* Safari, Android, iOS */
 }
 
 h1,
