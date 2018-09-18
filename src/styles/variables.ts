@@ -12,6 +12,19 @@ export const margins = {
   small: 30,
   medium: 50,
   large: 80,
+  sm: '0.5rem',
+  md: '1rem',
+  lg: '1.5rem',
+  xl: '2rem',
+  xxl: '2.5rem',
+}
+
+export const padding = {
+  sm: '0.5rem',
+  md: '1rem',
+  lg: '1.5rem',
+  xl: '2rem',
+  xxl: '2.5rem',
 }
 
 export const fonts = {
@@ -53,6 +66,12 @@ export const dimensions = {
     heading: 1.2,
   },
   containerPadding: 1.5,
+  images: {
+    mobileBig: {
+      width: 280 + 'px',
+      height: 380 + 'px',
+    },
+  },
 }
 
 export const heights = {
