@@ -1,26 +1,27 @@
 @font-face {
-  font-family: 'SyneWebFont';
-  src: url('./Syne-Regular.woff2'); /* IE9 Compat Modes */
-  src: url('./Syne-Regular.woff2') format('embedded-opentype'), /* IE6-IE8 */
-       url('./Syne-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('./Syne-Regular.woff2') format('woff'), /* Pretty Modern Browsers */
-       url('./Syne-Regular.woff2')  format('truetype'), /* Safari, Android, iOS */
+  font-family: "SyneWebFont";
+  src: url("./Syne-Regular.woff2"); /* IE9 Compat Modes */
+  src: url("./Syne-Regular.woff2") format("embedded-opentype"),
+    /* IE6-IE8 */ url("./Syne-Regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("./Syne-Regular.woff2") format("woff"),
+    /* Pretty Modern Browsers */ url("./Syne-Regular.woff2") format("truetype"); /* Safari, Android, iOS */
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./Poppins-Regular.woff2'); /* IE9 Compat Modes */
-  src: url('./Poppins-Regular.woff2?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('./Poppins-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('./Poppins-Regular.woff2') format('woff'), /* Pretty Modern Browsers */
-       url('./Poppins-Regular.woff2')  format('truetype'), /* Safari, Android, iOS */
+  font-family: "Poppins";
+  src: url("./Poppins-Regular.woff2"); /* IE9 Compat Modes */
+  src: url("./Poppins-Regular.woff2?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("./Poppins-Regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("./Poppins-Regular.woff2") format("woff"),
+    /* Pretty Modern Browsers */ url("./Poppins-Regular.woff2")
+      format("truetype"); /* Safari, Android, iOS */
 }
 
-
-h1, h2 {
-  font-family: 'SyneWebFont';
+h1,
+h2 {
+  font-family: "SyneWebFont";
 }
 
 p {
-  font-family: 'Poppins';  
+  font-family: "Poppins";
 }
