@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import { Link } from "gatsby"
+import { Link } from 'gatsby'
 import { Global, css } from '@emotion/core'
 import { Color, Space } from '../definitions'
 import styled from '@emotion/styled'
@@ -55,7 +55,7 @@ export default class IndexPage extends Component {
             </FlexItem>
             <Button type='submit'>Send</Button>
           </form>
-          <StyledLink to="/privacy">privacy policy</StyledLink>
+          <StyledLink to='/privacy'>privacy policy</StyledLink>
         </Container>
       </>
     )
@@ -73,14 +73,14 @@ const Container = styled.div`
 
 const StyledLink = styled(Link)`
   font-size: 20px;
-  color: #7C0A02;
+  color: #7c0a02;
   text-decoration: none;
 `
-
 
 const LogoImage = styled.img`
   width: 60vw;
   margin-bottom: ${Space.medium};
+  color: ${Color.font};
 `
 
 const FlexItem = styled.div`
@@ -93,6 +93,8 @@ const FlexItem = styled.div`
 `
 const Input = styled.input`
   color: ${Color.font};
+  background-color: rgb(255, 255, 255, 0.6);
+  border: none;
   text-align: center;
 `
 const Textarea = styled.textarea`
@@ -107,6 +109,7 @@ const Button = styled.button`
   margin-top: ${Space.medium};
   margin-bottom: ${Space.xlarge};
   color: ${Color.font};
+  background-color: rgb(255, 255, 255, 0.4);
   border: none;
   border-radius: 3px;
 `
