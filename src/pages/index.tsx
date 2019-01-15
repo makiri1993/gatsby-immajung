@@ -1,117 +1,115 @@
-import * as React from 'react'
-import styled from 'react-emotion'
+import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import BlogPostCard from '../components/blogpostItemDesktop/BlogPostItemDesktop'
-import Slider from '../components/slider/Slider'
-import { margins } from '../styles/variables'
+import { Link } from 'gatsby'
+import { Global, css } from '@emotion/core'
+import { Color, Space } from '../definitions'
+import styled from '@emotion/styled'
 
-interface IndexProps {
-  data: {
-    allMarkdownRemark: {
-      edges: PostExcerptNode[];
-    };
-  }
-}
-
-interface IndexState {}
-
-export default class Index extends React.Component<IndexProps, IndexState> {
-  constructor(props: IndexProps) {
-    super(props)
-    this.state = {}
-  }
-
-  public render() {
+const Logo = require('../images/slice1.svg')
+export default class IndexPage extends Component {
+  render() {
     return (
-      <MainContainer>
+      <>
         <Helmet>
-          <meta charSet="utf-8" />
-          <title>
-            immajung - when streetwear meets IT. A german streetwear brand
-          </title>
-          <link rel="canonical" href="https://www.immajung.com" />
-          <meta
-            name="description"
-            content="Immajung is a streetwear brand from germany.
-            Immajung merges modern streetwear with computer science concepts.
-            Fashion for nerds and streetwear lovers worldwide"
-          />
+          <meta charSet='UTF-8' />
+          <title>immajung - coming soon!</title>
         </Helmet>
-        <SliderContainerMobile>
-          <Slider blogposts={this.props.data.allMarkdownRemark.edges} />
-        </SliderContainerMobile>
-        <BlogContainerDesktop>
-          {this.props.data.allMarkdownRemark.edges.map((post, index) => (
-            <BlogPostCard
-              cat={post.node.frontmatter.category}
-              imgsrc={post.node.frontmatter.featuredImage}
-              title={post.node.frontmatter.title}
-              preText={post.node.excerpt}
-              link={post.node.fields.slug}
-            />
-          ))}
-        </BlogContainerDesktop>
-      </MainContainer>
+        <Global
+          styles={css`
+            @font-face {
+              font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 400;
+              src: url('../../public/static/Poppins/Poppins-Regular.ttf')
+                format('truetype');
+            }
+            * {
+              margin: 0;
+              font-size: 4vh;
+              font-family: 'Poppins', Fallback, sans-serif;
+            }
+            body {
+              background-color: ${Color.background};
+            }
+          `}
+        />
+        <Container>
+          <LogoImage src={Logo} />
+
+          <form
+            name='contact-immajung'
+            method='post'
+            data-netlify='true'
+            data-netlify-honeypot='bot-field'
+          >
+            <input type='hidden' name='form-name' value='contact-immajung' />
+            <FlexItem>
+              <label>
+                <Input type='text' name='name' placeholder='your name' />
+              </label>
+            </FlexItem>
+            <FlexItem>
+              <label>
+                <Input type='email' name='email' placeholder='your email' />
+              </label>
+            </FlexItem>
+            <Button type='submit'>Send</Button>
+          </form>
+          <StyledLink to='/privacy'>privacy policy</StyledLink>
+        </Container>
+      </>
     )
   }
 }
 
-const MainContainer = styled('div')`
-  overflow-x: hidden;
-  /* margin-left: ${margins.small}px; */
-  /* margin-right: ${margins.small}px; */
-  @media (min-width: 485px) {
-    overflow: visible;
-  }
-  @media (max-height: 570px) {
-    margin-left: ${margins.extrasmall}px;
-    margin-right: ${margins.extrasmall}px;
-  }
-`
-/* Show the slider on mobile only */
-const SliderContainerMobile = styled('div')`
-  @media (min-width: 485px) {
-    display: none;
-  }
-`
-
-const BlogContainerDesktop = styled('div')`
-  margin-top: ${margins.small}px;
-  width: 100%;
+const Container = styled.div`
+  margin: 0 auto;
+  margin-top: 20vh;
+  width: 80vw;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  @media (max-width: 485px) {
-    display: none;
-  }
+  flex-direction: column;
+  align-items: center;
 `
 
-// IndexPage.propTypes = {
-//   data: PropTypes.shape({
-//     allMarkdownRemark: PropTypes.shape({
-//       edges: PropTypes.array
-//     })
-//   })
-// };
+const StyledLink = styled(Link)`
+  font-size: 20px;
+  color: #7c0a02;
+  text-decoration: none;
+`
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 250)
-          frontmatter {
-            category
-            featuredImage
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
-        }
-      }
-    }
-  }
+const LogoImage = styled.img`
+  width: 60vw;
+  margin-bottom: ${Space.medium};
+  color: ${Color.font};
+`
+
+const FlexItem = styled.div`
+  width: 100%;
+  margin-bottom: ${Space.medium};
+  padding-left: ${Space.small};
+  padding-right: ${Space.small};
+  border: none;
+  border-radius: 4px;
+`
+const Input = styled.input`
+  color: ${Color.font};
+  background-color: rgb(255, 255, 255, 0.6);
+  border: none;
+  text-align: center;
+`
+const Textarea = styled.textarea`
+  width: 25vw;
+  margin-bottom: ${Space.xlarge};
+  color: ${Color.font};
+`
+
+const Button = styled.button`
+  width: 100%;
+  padding: ${Space.xsmall};
+  margin-top: ${Space.medium};
+  margin-bottom: ${Space.xlarge};
+  color: ${Color.font};
+  background-color: rgb(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 3px;
 `
