@@ -219,7 +219,7 @@ export default class PrivavyPage extends Component {
 
 const Container = styled.div`
   margin: 0 auto;
-  margin-top: 20vh;
+  margin-top: 10vh;
   width: 65vw;
   display: block;
 `
