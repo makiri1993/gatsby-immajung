@@ -16,6 +16,6 @@ export const Shadow = {
 
 export const Color = {
   background: '#DAAD86',
-  font: 'black',
+  font: '#7C0A02',
   standard: 'rgba(255, 64, 0, 0.6)',
 }
