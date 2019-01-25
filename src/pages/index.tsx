@@ -10,8 +10,6 @@ const Logo = require('../images/slice1.svg')
 interface Props {}
 interface State {
   email: string
-  firstName: string
-  lastName: string
   resultMessage: string | null
 }
 export default class IndexPage extends Component<Props, State> {
@@ -19,8 +17,6 @@ export default class IndexPage extends Component<Props, State> {
     super(props)
     this.state = {
       email: '',
-      firstName: '',
-      lastName: '',
       resultMessage: null,
     }
   }
@@ -33,19 +29,8 @@ export default class IndexPage extends Component<Props, State> {
   }
 
   private handleChange = (event: any) => {
-    const name: string = event.target.name
     const value: string = event.target.value
-    switch (name) {
-      case 'firstName':
-        this.setState({ firstName: value })
-        break
-      case 'lastName':
-        this.setState({ lastName: value })
-        break
-      case 'email':
-        this.setState({ email: value })
-        break
-    }
+    this.setState({ email: value })
   }
 
   private get renderHelmet() {
