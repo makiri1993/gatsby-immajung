@@ -1,13 +1,54 @@
-import React, { Component } from 'react'
+import React, { Component, FormEvent } from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
 import { Global, css } from '@emotion/core'
 import { Color, Space } from '../definitions'
 import styled from '@emotion/styled'
-
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 const Logo = require('../images/slice1.svg')
-export default class IndexPage extends Component {
-  render() {
+
+interface Props {}
+interface State {
+  email: string
+  firstName: string
+  lastName: string
+  resultMessage: string | null
+}
+export default class IndexPage extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props)
+    this.state = {
+      email: '',
+      firstName: '',
+      lastName: '',
+      resultMessage: null,
+    }
+  }
+
+  private handleSubmit = async (event: any) => {
+    event.preventDefault()
+    const { email } = this.state
+    const result = await addToMailchimp(email)
+    this.setState({ resultMessage: result.msg })
+  }
+
+  private handleChange = (event: any) => {
+    const name: string = event.target.name
+    const value: string = event.target.value
+    switch (name) {
+      case 'firstName':
+        this.setState({ firstName: value })
+        break
+      case 'lastName':
+        this.setState({ lastName: value })
+        break
+      case 'email':
+        this.setState({ email: value })
+        break
+    }
+  }
+
+  private get renderHelmet() {
     return (
       <>
         <Helmet>
@@ -33,28 +74,37 @@ export default class IndexPage extends Component {
             }
           `}
         />
+      </>
+    )
+  }
+
+  render() {
+    const { email, resultMessage } = this.state
+    return (
+      <>
+        {this.renderHelmet}
         <Container>
           <LogoImage src={Logo} />
+          {resultMessage !== null ? (
+            <ResultText>{resultMessage}</ResultText>
+          ) : (
+            <form onSubmit={this.handleSubmit}>
+              <input type='hidden' name='form-name' value='contact-immajung' />
 
-          <form
-            name='contact-immajung'
-            method='post'
-            data-netlify='true'
-            data-netlify-honeypot='bot-field'
-          >
-            <input type='hidden' name='form-name' value='contact-immajung' />
-            <FlexItem>
-              <label>
-                <Input type='text' name='name' placeholder='your name' />
-              </label>
-            </FlexItem>
-            <FlexItem>
-              <label>
-                <Input type='email' name='email' placeholder='your email' />
-              </label>
-            </FlexItem>
-            <Button type='submit'>Send</Button>
-          </form>
+              <FlexItem>
+                <label>
+                  <Input
+                    type='email'
+                    name='email'
+                    placeholder='your email'
+                    value={email}
+                    onChange={this.handleChange}
+                  />
+                </label>
+              </FlexItem>
+              <Button type='submit'>Send</Button>
+            </form>
+          )}
           <StyledLink to='/privacy'>privacy policy</StyledLink>
         </Container>
       </>
@@ -97,8 +147,9 @@ const Input = styled.input`
   border: none;
   text-align: center;
 `
-const Textarea = styled.textarea`
-  width: 25vw;
+const ResultText = styled.p`
+  width: 50vw;
+  line-height: 1.2;
   margin-bottom: ${Space.xlarge};
   color: ${Color.font};
 `

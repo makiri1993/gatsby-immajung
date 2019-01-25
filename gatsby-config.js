@@ -9,6 +9,13 @@ module.exports = {
     'gatsby-plugin-typescript',
     `gatsby-plugin-react-helmet`,
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://immajung.us20.list-manage.com/subscribe/post?u=5192fd79beeb0dd24c537b058&amp;id=7f08638b91', // see instructions section below
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
